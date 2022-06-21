@@ -56,6 +56,13 @@ public:
 	void move(float deltaTime);
 
 	/**
+	 * @brief Draw the sim
+	 *
+	 * @param window Windows used to draw
+	 */
+	void draw(sf::RenderWindow& window);
+
+	/**
 	 * @brief Get the sprite of the sim
 	 *
 	 * @return sf::CircleShape Shape that represents this sims sprite

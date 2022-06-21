@@ -21,7 +21,7 @@ Sim::Sim()
 
 void Sim::hurt(int damage)
 {
-	if (health > 0.0f)
+	if (health > 0)
 	{
 		health -= damage;
 	}
@@ -51,7 +51,7 @@ void Sim::move(float deltaTime)
 			pos.x += speed;
 		}
 	}
-	if (randomY == 1)
+	if (randomX == 1)
 	{
 		if (world.inWorld(Position(pos.x - speed, pos.y)))
 		{
@@ -72,6 +72,11 @@ void Sim::move(float deltaTime)
 			pos.y -= speed;
 		}
 	}
+}
+
+void Sim::draw(sf::RenderWindow& window)
+{
+	window.draw(getSprite());
 }
 
 void Sim::setHealth(int health)
@@ -102,5 +107,5 @@ Position Sim::getPosition(void)
 
 bool Sim::isDead(void)
 {
-	return health <= 0.0f;
+	return health <= 0;
 }
